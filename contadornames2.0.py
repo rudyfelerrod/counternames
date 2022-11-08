@@ -145,7 +145,7 @@ agregar = input('Quieres agregar alguien a la lista de nombres Y/N ')
 while agregar == "Y":
     nuevonombre = input('escriba el nombre: ')
     newNameMayus = nuevonombre.upper()
-    with open('/Users/rodrigovillanueva/PycharmProjects/pythonProject/Carpeta1/nombres2.txt', 'a') as listaDeNombres:
+    with open('/Users/rodrigovillanueva/documents/proyectos_python/Contadornames/counternames/nombres2.txt', 'a') as listaDeNombres:
         listaDeNombres.write("\n" + newNameMayus)
         agregar = input('Quieres agregar alguien a la lista de nombres Y/N ')
 
