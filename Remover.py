@@ -1,21 +1,22 @@
 from openpyxl import load_workbook
 import os
 
-Direccion = input("Pegue la dirección a su archivo, ejemplo: \n /Users/rodrigovillanueva/Desktop/    ")
-os.chdir (Direccion)
-leer1 = input('Ponga nombre de archivo ')
-libro = load_workbook(leer1)
+
+#Direccion = input("Pegue la dirección a su archivo, ejemplo: \n /Users/rodrigovillanueva/Desktop/    ")
+os.chdir ('/Users/rodrigovillanueva/Desktop/')
+#leer1 = input('Ponga nombre de archivo ')
+libro = load_workbook('archivo.xlsx')
 # obtenemos la pestaña/hoja activa (nada mas abrir es la primera)
 hoja = libro.active
 
-nombrehoja = input("Ponga el nombre de la hoja: ")
-hoja = libro[nombrehoja]
+#nombrehoja = input("Ponga el nombre de la hoja: ")
+hoja = libro['Hoja1']
 a= int(input("escribe la fila inicial "))
 b= int(input("escribe la fila final "))
 
 for i in range(a,b):
-    d= "U"+str(i+1)
-    j = "AJ" + str(i + 1)
+    d= "A"+str(i+1)
+    j = "F" + str(i + 1)
     d0 = (hoja[d].value)
     d2 = bool(d0)
     if d2 == True:
@@ -28,7 +29,7 @@ for i in range(a,b):
     d6 = d5.split(' ')
     x = d6
     import os
-    os.chdir("/Users/rodrigovillanueva/documents/proyectos_python/Contadornames/counternames/")
+    os.chdir("/Users/rodrigovillanueva/PycharmProjects/pythonProject/Carpeta1")
     fname = "nombres2.txt"
     fh = open(fname)
     counter = 0
@@ -56,8 +57,8 @@ for i in range(a,b):
     hoja[j] = total1
 
     for i in range(a, b):
-        d = "V" + str(i + 1)
-        j1 = "AK" + str(i + 1)
+        d = "B" + str(i + 1)
+        j1 = "G" + str(i + 1)
         d0 = (hoja[d].value)
         d2 = bool(d0)
         if d2 == True:
@@ -71,7 +72,7 @@ for i in range(a,b):
         x = d6
         import os
 
-        os.chdir("/Users/rodrigovillanueva/documents/proyectos_python/Contadornames/counternames/")
+        os.chdir("/Users/rodrigovillanueva/PycharmProjects/pythonProject/Carpeta1")
         fname = "nombres2.txt"
         fh = open(fname)
         counter = 0
@@ -95,8 +96,8 @@ for i in range(a,b):
         hoja[j1] = total2
 
         for i in range(a, b):
-            d = "W" + str(i + 1)
-            j2 = "AL" + str(i + 1)
+            d = "C" + str(i + 1)
+            j2 = "H" + str(i + 1)
             d0 = (hoja[d].value)
             d2 = bool(d0)
             if d2 == True:
@@ -110,7 +111,7 @@ for i in range(a,b):
             x = d6
             import os
 
-            os.chdir("/Users/rodrigovillanueva/documents/proyectos_python/Contadornames/counternames/")
+            os.chdir("/Users/rodrigovillanueva/PycharmProjects/pythonProject/Carpeta1")
             fname = "nombres2.txt"
             fh = open(fname)
             counter = 0
@@ -137,19 +138,4 @@ for i in range(a,b):
 
 
 
-libro =libro.save(Direccion+leer1)
-
-#este bloque agrega un nuevo nombre a la lista de nombres en la base de datos
-agregar = input('Quieres agregar alguien a la lista de nombres Y/N ')
-
-while agregar == "Y":
-    nuevonombre = input('escriba el nombre: ')
-    newNameMayus = nuevonombre.upper()
-    with open('/Users/rodrigovillanueva/documents/proyectos_python/Contadornames/counternames/nombres2.txt', 'a') as listaDeNombres:
-        listaDeNombres.write("\n" + newNameMayus)
-        agregar = input('Quieres agregar alguien a la lista de nombres Y/N ')
-
-
-
-else:
-    print("gracias buen día")
+libro =libro.save('/Users/rodrigovillanueva/Desktop/archivo.xlsx')
